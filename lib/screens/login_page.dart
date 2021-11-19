@@ -1,14 +1,17 @@
 import 'package:ad_gu/main.dart';
+import 'package:ad_gu/screens/signin_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  LoginPage({Key? key}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -167,8 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     RawMaterialButton(
                       constraints: BoxConstraints(),
-                      padding: EdgeInsets.all(
-                          0), 
+                      padding: EdgeInsets.all(0),
                       onPressed: null,
                       child: Text(
                         'Sign up',
