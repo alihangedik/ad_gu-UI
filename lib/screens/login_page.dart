@@ -1,3 +1,4 @@
+
 import 'package:ad_gu/main.dart';
 import 'package:ad_gu/screens/signin_page.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +11,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -160,26 +159,30 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
+                  children: [
+                    const Text(
                       "Here for the first time?",
                       style: TextStyle(
                         fontFamily: "Poppins-Regular",
                         color: Color(0xffBEC2CE),
                       ),
                     ),
-                    RawMaterialButton(
-                      constraints: BoxConstraints(),
-                      padding: EdgeInsets.all(0),
-                      onPressed: null,
-                      child: Text(
-                        'Sign up',
-                        style: TextStyle(
-                          fontFamily: "Poppins-SemiBold",
-                          color: Color(0xff515BDE),
+                    FlatButton(
+                        child: const Text(
+                          'Sign up',
+                          style: TextStyle(
+                            fontFamily: "Poppins-SemiBold",
+                            color: Color(0xff515BDE),
+                          ),
                         ),
-                      ),
-                    )
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SigninPage(),
+                            ),
+                          );
+                        })
                   ],
                 )
               ],
