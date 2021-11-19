@@ -59,7 +59,7 @@ class _SigninPageState extends State<SigninPage> {
             child: const Align(
               alignment: Alignment(-0.88, -0.5),
               child: Text(
-                "Log in",
+                "Sign up",
                 style: TextStyle(fontSize: 34, fontFamily: "Poppins-ExtraBold"),
               ),
             ),
@@ -149,7 +149,7 @@ class _SigninPageState extends State<SigninPage> {
                         borderRadius: BorderRadius.all(Radius.circular(11)),
                       ),
                       child: const Text(
-                        "LOG IN",
+                        "SIGN UP",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: 18,
@@ -161,45 +161,33 @@ class _SigninPageState extends State<SigninPage> {
                   ),
                 ),
                 SizedBox(height: 20),
-                FlatButton(
-                  splashColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onPressed: () {},
-                  child: Container(
-                    child: const Text(
-                      "Forgot password?",
-                      style: TextStyle(
-                        fontFamily: "Poppins-SemiBold",
-                        color: Color(0xffBEC2CE),
-                        fontSize: 14,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ),
-                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
-                      "Here for the first time?",
+                  children: [
+                    const Text(
+                      "Have an account?",
                       style: TextStyle(
                         fontFamily: "Poppins-Regular",
                         color: Color(0xffBEC2CE),
                       ),
                     ),
-                    RawMaterialButton(
-                      constraints: BoxConstraints(),
-                      padding: EdgeInsets.all(
-                          0), 
-                      onPressed: null,
-                      child: Text(
-                        'Sign up',
-                        style: TextStyle(
-                          fontFamily: "Poppins-SemiBold",
-                          color: Color(0xff515BDE),
+                    FlatButton(
+                        padding: EdgeInsets.all(0),
+                        child: const Text(
+                          'Log In',
+                          style: TextStyle(
+                            fontFamily: "Poppins-SemiBold",
+                            color: Color(0xff515BDE),
+                          ),
                         ),
-                      ),
-                    )
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SigninPage(),
+                            ),
+                          );
+                        })
                   ],
                 )
               ],
