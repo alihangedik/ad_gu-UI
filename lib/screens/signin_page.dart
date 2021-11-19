@@ -64,7 +64,7 @@ class _SigninPageState extends State<SigninPage> {
               ),
             ),
           ),
-          const SizedBox(height: 170),
+          const SizedBox(height: 150),
           Container(
             width: 331,
             child: Column(
@@ -85,6 +85,28 @@ class _SigninPageState extends State<SigninPage> {
                     ),
                     prefixIcon: Image.asset(
                       "assets/images/user.png",
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                TextFormField(
+                  decoration: InputDecoration(
+                    enabledBorder: const UnderlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xffBEC2CE), width: 2),
+                    ),
+                    labelText: "Email",
+                    labelStyle: const TextStyle(
+                      fontSize: 16,
+                      fontFamily: "Poppins-Regular",
+                      color: Color(
+                        0xffBEC2CE,
+                      ),
+                    ),
+                    prefixIcon: Image.asset(
+                      "assets/images/email.png",
                     ),
                   ),
                 ),
