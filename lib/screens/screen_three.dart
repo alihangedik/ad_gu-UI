@@ -1,4 +1,4 @@
-import 'package:ad_gu/model/screens.dart';
+import 'package:ad_gu/widgets/screens.dart';
 import 'package:flutter/material.dart';
 
 class ScreenThree extends StatefulWidget {
