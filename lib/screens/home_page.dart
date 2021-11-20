@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -11,7 +12,46 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: SizedBox(
+              height: 40,
+              child: Image.asset(
+                "assets/images/explore.png",
+                scale: 0.8,
+              ),
+            ),
+            label: "Explore",
+          ),
+          BottomNavigationBarItem(
+              icon: SizedBox(
+                height: 40,
+                child: Image.asset(
+                  "assets/images/my-trips.png",
+                  scale: 0.8,
+                ),
+              ),
+              label: "My Trips"),
+          BottomNavigationBarItem(
+              icon: SizedBox(
+                  height: 40,
+                  child: Image.asset(
+                    "assets/images/favourite.png",
+                    scale: 0.8,
+                  )),
+              label: "Favourite")
+        ],
+        selectedLabelStyle:
+            const TextStyle(fontSize: 12, fontFamily: "Poppins-SemiBold"),
+        unselectedLabelStyle:
+            const TextStyle(fontSize: 12, fontFamily: "Poppins-SemiBold"),
+        selectedItemColor: const Color(0xffBEC2CE),
+        unselectedItemColor: const Color(0xffBEC2CE),
+        elevation: 0,
+        backgroundColor: Colors.white,
+      ),
+      backgroundColor: Color(0xffF7F8FA),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -97,11 +137,96 @@ class _HomeState extends State<Home> {
               const Icon(Icons.bookmark)
             ],
           ),
-          Container(
-             width: MediaQuery.of(context).size.width / 0.5,
-            child: Image.asset(
-              "assets/images/image-1.png",
+          CarouselSlider(
+            options: CarouselOptions(
+              height: 580,
+              viewportFraction: 1,
+              initialPage: 0,
+              scrollDirection: Axis.horizontal,
             ),
+            items: [
+              "assets/images/image-1.png",
+              "assets/images/image-1.png",
+              "assets/images/image-1.png",
+              "assets/images/image-1.png",
+              "assets/images/image-1.png"
+            ].map((i) {
+              return Builder(
+                builder: (BuildContext context) {
+                  return Container(
+                    width: MediaQuery.of(context).size.width,
+                    child: Stack(
+                      children: [
+                        Image.asset(
+                          "$i",
+                        ),
+                        Positioned(
+                          top: 375,
+                          left: 50,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Climbing Mont Blanc\n in the Winter",
+                                style: TextStyle(
+                                  fontSize: 28,
+                                  fontFamily: "Poppins-ExtraBold",
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Container(
+                                alignment: Alignment.centerLeft,
+                                child: Image.asset(
+                                  "assets/images/stars.png",
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Row(
+                                children: const [
+                                  Text(
+                                    "\$",
+                                    style: TextStyle(
+                                        fontFamily: "Poppins-Regular",
+                                        fontSize: 18,
+                                        color: Colors.white),
+                                  ),
+                                  Text(
+                                    "845.00",
+                                    style: TextStyle(
+                                        fontFamily: "Poppins-ExtraBold",
+                                        fontSize: 18,
+                                        color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    width: 165,
+                                  ),
+                                  Icon(
+                                    Icons.favorite,
+                                    color: Colors.white,
+                                  ),
+                                  Text(
+                                    "6531",
+                                    style: TextStyle(
+                                        fontFamily: "Poppins-Regular",
+                                        fontSize: 14,
+                                        color: Colors.white),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  );
+                },
+              );
+            }).toList(),
           )
         ],
       ),
