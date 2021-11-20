@@ -1,3 +1,5 @@
+import 'package:ad_gu/main.dart';
+import 'package:ad_gu/screens/details_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -34,12 +36,7 @@ class _HomeState extends State<Home> {
               ),
               label: "My Trips"),
           BottomNavigationBarItem(
-              icon: SizedBox(
-                  height: 40,
-                  child: Image.asset(
-                    "assets/images/favourite.png",
-                    scale: 0.8,
-                  )),
+              icon: SizedBox(height: 40,child: Image.asset("assets/images/favourite.png",  scale: 0.8,)),
               label: "Favourite")
         ],
         selectedLabelStyle:
@@ -94,7 +91,7 @@ class _HomeState extends State<Home> {
             ],
           ),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
           Container(
             width: MediaQuery.of(context).size.width / 1.1,
@@ -155,73 +152,76 @@ class _HomeState extends State<Home> {
                 builder: (BuildContext context) {
                   return Container(
                     width: MediaQuery.of(context).size.width,
-                    child: Stack(
-                      children: [
-                        Image.asset(
-                          "$i",
-                        ),
-                        Positioned(
-                          top: 375,
-                          left: 50,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                "Climbing Mont Blanc\n in the Winter",
-                                style: TextStyle(
-                                  fontSize: 28,
-                                  fontFamily: "Poppins-ExtraBold",
-                                  color: Colors.white,
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Container(
-                                alignment: Alignment.centerLeft,
-                                child: Image.asset(
-                                  "assets/images/stars.png",
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                children: const [
-                                  Text(
-                                    "\$",
-                                    style: TextStyle(
-                                        fontFamily: "Poppins-Regular",
-                                        fontSize: 18,
-                                        color: Colors.white),
-                                  ),
-                                  Text(
-                                    "845.00",
-                                    style: TextStyle(
-                                        fontFamily: "Poppins-ExtraBold",
-                                        fontSize: 18,
-                                        color: Colors.white),
-                                  ),
-                                  SizedBox(
-                                    width: 165,
-                                  ),
-                                  Icon(
-                                    Icons.favorite,
+                    child: GestureDetector(
+                      onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsPage()));},
+                      child: Stack(
+                        children: [
+                          Image.asset(
+                            "$i",
+                          ),
+                          Positioned(
+                            top: 375,
+                            left: 50,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Climbing Mont Blanc\n in the Winter",
+                                  style: TextStyle(
+                                    fontSize: 28,
+                                    fontFamily: "Poppins-ExtraBold",
                                     color: Colors.white,
                                   ),
-                                  Text(
-                                    "6531",
-                                    style: TextStyle(
-                                        fontFamily: "Poppins-Regular",
-                                        fontSize: 14,
-                                        color: Colors.white),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        )
-                      ],
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  alignment: Alignment.centerLeft,
+                                  child: Image.asset(
+                                    "assets/images/stars.png",
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  children: const [
+                                    Text(
+                                      "\$",
+                                      style: TextStyle(
+                                          fontFamily: "Poppins-Regular",
+                                          fontSize: 18,
+                                          color: Colors.white),
+                                    ),
+                                    Text(
+                                      "845.00",
+                                      style: TextStyle(
+                                          fontFamily: "Poppins-ExtraBold",
+                                          fontSize: 18,
+                                          color: Colors.white),
+                                    ),
+                                    SizedBox(
+                                      width: 165,
+                                    ),
+                                    Icon(
+                                      Icons.favorite,
+                                      color: Colors.white,
+                                    ),
+                                    Text(
+                                      "6531",
+                                      style: TextStyle(
+                                          fontFamily: "Poppins-Regular",
+                                          fontSize: 14,
+                                          color: Colors.white),
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   );
                 },
