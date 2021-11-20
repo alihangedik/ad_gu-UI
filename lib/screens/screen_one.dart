@@ -13,19 +13,33 @@ class _ScreenOneState extends State<ScreenOne> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        children: const [
-          Screens(
-            image: "assets/images/bg layouts.png",
-            image2: "assets/images/content1.png",
-            topValue: -135,
-            leftValue: -91,
-          ),
-          Text(
-            "Popularised in the 1960s with the release of Letraset sheets co",
-            style: TextStyle(fontSize: 2),
-          )
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children:  [
+            const Screens(
+              image: "assets/images/bg layouts.png",
+              image2: "assets/images/content1-1.png",
+              topValue: -135,
+              leftValue: -91,
+            ),
+            /* Container(
+              width: 300,
+              child: const Text(
+                "Popularised in the 1960s with the release of Letraset sheets co", textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 24, fontFamily:"Poppins-ExtraBold"),
+              ),
+            ),
+            Container(
+              width: 300,
+              child: const Text(
+                "Popularised in the 1960s with the release of Letraset sheets co", textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 24, fontFamily:"Poppins-ExtraBold"),
+              ),
+            ), */
+          ],
+        ),
       ),
     );
   }
