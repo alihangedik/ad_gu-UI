@@ -28,17 +28,20 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.only(left: 16.0),
                   child: TextFormField(
                     decoration: InputDecoration(
-                        border: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        disabledBorder: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        hintText: "Search",
-                        hintStyle: const TextStyle(
-                          fontSize: 16,
-                          fontFamily: "Poppins-Regular",
-                          color: Color(0xffBEC2CE),
-                        ),
-                        suffixIcon: Image.asset("assets/images/search.png")),
+                      border: InputBorder.none,
+                      enabledBorder: InputBorder.none,
+                      disabledBorder: InputBorder.none,
+                      focusedBorder: InputBorder.none,
+                      hintText: "Search",
+                      hintStyle: const TextStyle(
+                        fontSize: 16,
+                        fontFamily: "Poppins-Regular",
+                        color: Color(0xffBEC2CE),
+                      ),
+                      suffixIcon: Image.asset(
+                        "assets/images/search.png",
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -64,6 +67,42 @@ class _HomeState extends State<Home> {
             ),
             alignment: Alignment.centerLeft,
           ),
+          SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width / 25,
+                child: const Icon(
+                  Icons.location_on,
+                  color: Color(0xffBEC2CE),
+                ),
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                child: const Text(
+                  "Mont Blanc",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: "Poppins-ExtraBold",
+                    color: Color(0xffBEC2CE),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                width: 150,
+              ),
+              const Icon(Icons.bookmark)
+            ],
+          ),
+          Container(
+             width: MediaQuery.of(context).size.width / 0.5,
+            child: Image.asset(
+              "assets/images/image-1.png",
+            ),
+          )
         ],
       ),
     );
