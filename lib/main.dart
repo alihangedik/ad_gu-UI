@@ -1,3 +1,4 @@
+import 'package:ad_gu/screens/home_page.dart';
 import 'package:ad_gu/screens/login_page.dart';
 import 'package:ad_gu/screens/screen_one.dart';
 import 'package:ad_gu/screens/screen_three.dart';
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.white,
       body: PageView(
         controller: controller,
-        children: [ScreenOne(), ScreenTwo(), ScreenThree(),LoginPage()],
+        children: [ScreenOne(), ScreenTwo(), ScreenThree(),LoginPage(),Home()],
       ),
     );
   }
