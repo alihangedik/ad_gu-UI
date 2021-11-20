@@ -29,8 +29,9 @@ class Screens extends StatelessWidget {
           ),
         ),
         Container(
-          height: MediaQuery.of(context).size.height * 3,
-          width: MediaQuery.of(context).size.width * 3,
+         height: 950,
+         // MediaQuery.of(context).size.height ,
+          width: MediaQuery.of(context).size.width ,
           child: Image.asset(
             image2,
           ),
