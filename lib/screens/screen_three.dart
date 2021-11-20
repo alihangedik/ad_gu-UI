@@ -15,7 +15,7 @@ class _ScreenThreeState extends State<ScreenThree> {
       backgroundColor: Colors.white,
       body: Screens(
         image: "assets/images/bg layouts.png",
-        image2: "assets/images/content3.png",
+        image2: "assets/images/content3-1.png",
         topValue: -135,
         leftValue: -922,
       ),
