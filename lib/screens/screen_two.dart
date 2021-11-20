@@ -15,7 +15,7 @@ class _ScreenTwoState extends State<ScreenTwo> {
       backgroundColor: Colors.white,
       body: Screens(
         image: "assets/images/bg layouts.png",
-        image2: "assets/images/content2.png",
+        image2: "assets/images/content2-1.png",
         topValue: -135,
         leftValue: -510,
       ),
