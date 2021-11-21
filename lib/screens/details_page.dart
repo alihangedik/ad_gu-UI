@@ -83,32 +83,166 @@ class _DetailsPageState extends State<DetailsPage> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 10),
+                  Container(
+                    width: 375,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          alignment: Alignment.centerLeft,
+                          child: Image.asset(
+                            "assets/images/stars.png",
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const Text(
+                          "235 Reviews",
+                          style: TextStyle(
+                            fontFamily: "Poppins-Regular",
+                            color: Color(0xffBEC2CE),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        alignment: Alignment.centerLeft,
-                        child: Image.asset(
-                          "assets/images/stars.png",
-                        ),
+                    children: const [
+                      Info(
+                        image: "assets/images/distance.png",
+                        text: "Distance",
+                        value: "32 km",
                       ),
-                      const SizedBox(
-                        width: 10,
+                      SizedBox(
+                        width: 40,
                       ),
-                      const Text(
-                        "235 Reviews",
-                        style: TextStyle(
-                        fontFamily: "Poppins-Regular",
-                        color: Color(0xffBEC2CE)),
+                      Info(
+                        image: "assets/images/elevation.png",
+                        text: "Elevation",
+                        value: "2371 m",
+                      ),
+                      SizedBox(
+                        width: 40,
+                      ),
+                      Info(
+                        image: "assets/images/time.png",
+                        text: "Time",
+                        value: "24 h",
                       )
                     ],
-                  )
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    width: 375,
+                    child: const Text(
+                      "Mont Blanc, Italian Monte Bianco, mountain massif and highest peak (15,771 feet [4,807 metres]) in Europe. Located in the Alps, the massif lies along the French-Italian border and reaches into Switzerland. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: "Poppins-Regular",
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  FractionallySizedBox(
+                    widthFactor: 2,
+                    child: FlatButton(
+                      splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onPressed: () {},
+                      child: Container(
+                        alignment: Alignment.center,
+                        width: 375,
+                        height: 50,
+                        decoration: const BoxDecoration(
+                          color: Color(0xff515BDE),
+                          borderRadius: BorderRadius.all(Radius.circular(11)),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Text(
+                              "BOOK FROM",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: "Poppins-ExtraBold",
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 4,
+                            ),
+                            Text(
+                              "\$",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: "Poppins-Regular",
+                                color: Colors.white,
+                              ),
+                            ),
+                            Text(
+                              "845.00",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: "Poppins-ExtraBold",
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
           )
         ],
       ),
+    );
+  }
+}
+
+class Info extends StatelessWidget {
+  final image;
+  final text;
+  final value;
+  const Info({
+    Key? key,
+    this.image,
+    this.text,
+    this.value,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(
+          image,
+          scale: 0.8,
+        ),
+        SizedBox(
+          width: 10,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              text,
+              style: TextStyle(fontFamily: "Poppins-Regular", fontSize: 14),
+            ),
+            Text(
+              value,
+              style: TextStyle(fontFamily: "Poppins-ExtraBold", fontSize: 14),
+            ),
+          ],
+        )
+      ],
     );
   }
 }
