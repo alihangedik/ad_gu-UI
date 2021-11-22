@@ -1,3 +1,5 @@
+import 'package:ad_gu/screens/detaisl_reviews_page.dart';
+import 'package:ad_gu/screens/home_page.dart';
 import 'package:flutter/material.dart';
 
 class DetailsPage extends StatefulWidget {
@@ -83,7 +85,6 @@ class _DetailsPageState extends State<DetailsPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
                   Container(
                     width: 375,
                     child: Row(
@@ -95,20 +96,28 @@ class _DetailsPageState extends State<DetailsPage> {
                             "assets/images/stars.png",
                           ),
                         ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        const Text(
-                          "235 Reviews",
-                          style: TextStyle(
-                            fontFamily: "Poppins-Regular",
-                            color: Color(0xffBEC2CE),
+                        
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const DetailsReview(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            "235 Reviews",
+                            style: TextStyle(
+                              fontFamily: "Poppins-Regular",
+                              color: Color(0xffBEC2CE),
+                            ),
                           ),
                         )
                       ],
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 5),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
