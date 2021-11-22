@@ -1,5 +1,9 @@
+
+
 import 'package:ad_gu/main.dart';
 import 'package:ad_gu/screens/details_page.dart';
+import 'package:ad_gu/screens/search_page.dart';
+import 'package:ad_gu/screens/signin_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +40,12 @@ class _HomeState extends State<Home> {
               ),
               label: "My Trips"),
           BottomNavigationBarItem(
-              icon: SizedBox(height: 40,child: Image.asset("assets/images/favourite.png",  scale: 0.8,)),
+              icon: SizedBox(
+                  height: 40,
+                  child: Image.asset(
+                    "assets/images/favourite.png",
+                    scale: 0.8,
+                  )),
               label: "Favourite")
         ],
         selectedLabelStyle:
@@ -59,31 +68,36 @@ class _HomeState extends State<Home> {
                 height: 45,
                 width: MediaQuery.of(context).size.width / 1.2,
                 decoration: BoxDecoration(
-                    color: Color(0xffEDEEF0),
+                    color: const Color(0xffEDEEF0),
                     borderRadius: BorderRadius.circular(12)),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 16.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      disabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      hintText: "Search",
-                      hintStyle: const TextStyle(
-                        fontSize: 16,
-                        fontFamily: "Poppins-Regular",
-                        color: Color(0xffBEC2CE),
-                      ),
-                      suffixIcon: Image.asset(
-                        "assets/images/search.png",
-                      ),
-                    ),
-                  ),
-                ),
+                child: FlatButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SearchPage(),
+                        ),
+                      );
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          "Search",
+                          style: TextStyle(
+                            fontFamily: "Poppins-Regular",
+                            fontSize: 16,
+                            color: Color(
+                              0xffBEC2CE,
+                            ),
+                          ),
+                        ),
+                        Image.asset("assets/images/search.png")
+                      ],
+                    )),
               ),
-              const SizedBox(
-                width: 15,
+              SizedBox(
+                width: 10,
               ),
               CircleAvatar(
                 child: Image.asset("assets/images/circle-avatar.png"),
@@ -153,7 +167,12 @@ class _HomeState extends State<Home> {
                   return Container(
                     width: MediaQuery.of(context).size.width,
                     child: GestureDetector(
-                      onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailsPage()));},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DetailsPage()));
+                      },
                       child: Stack(
                         children: [
                           Image.asset(
