@@ -1,4 +1,5 @@
 import 'package:ad_gu/screens/detaisl_reviews_page.dart';
+import 'package:ad_gu/screens/guides_tickets_page.dart';
 import 'package:ad_gu/screens/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -163,7 +164,14 @@ class _DetailsPageState extends State<DetailsPage> {
                     child: FlatButton(
                       splashColor: Colors.transparent,
                       highlightColor: Colors.transparent,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => GuidesAndTicketsPage(),
+                          ),
+                        );
+                      },
                       child: Container(
                         alignment: Alignment.center,
                         width: 375,
