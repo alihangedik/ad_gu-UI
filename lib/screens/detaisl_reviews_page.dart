@@ -12,7 +12,6 @@ class _DetailsReviewState extends State<DetailsReview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       backgroundColor: Colors.white,
       appBar: AppBar(
         bottom: PreferredSize(
@@ -161,7 +160,7 @@ class _DetailsReviewState extends State<DetailsReview> {
                       text:
                           "Richard McClintock, a Latin professor\nat Hampden-Sydney College in\nVirginia, looked up one of the more",
                     ),
-                     const SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
                     Row(
@@ -234,7 +233,35 @@ class _DetailsReviewState extends State<DetailsReview> {
               ],
             ),
           ),
-
+          Container(
+            height: 97,
+            decoration: BoxDecoration(color: Color(0xffEAECEF)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "assets/images/my-trips.png",
+                  scale: 1.2,
+                  color: Colors.black,
+                ),
+                TextButton(
+                  style:  ButtonStyle(
+                    overlayColor: MaterialStateColor.resolveWith((states) => Colors.transparent)
+                  ),
+                  onPressed: () {},
+                  child: const Text(
+                    "ADD TO MY TRIPS",
+                    style: TextStyle(
+                      fontFamily: "Poppins-ExtraBold",
+                      fontSize: 18,
+                      color: Colors.black,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
