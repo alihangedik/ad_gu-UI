@@ -96,8 +96,10 @@ class _DetailsPageState extends State<DetailsPage> {
                             "assets/images/stars.png",
                           ),
                         ),
-                        
                         TextButton(
+                          style: ButtonStyle(
+                              overlayColor: MaterialStateColor.resolveWith(
+                                  (states) => Colors.transparent)),
                           onPressed: () {
                             Navigator.push(
                               context,
